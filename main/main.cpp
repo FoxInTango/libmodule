@@ -7,7 +7,7 @@ int main(int argc,char** argv) {
 
     ModuleInterface* interface = module->interface();
     if(interface) {
-        std::cout << "module IOEngineLWS loaded " << std::endl;
+        std::cout << "Module - IOEngineLWS loaded." << std::endl;
     }
     return 0;
 }
