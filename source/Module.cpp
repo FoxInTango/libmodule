@@ -6,6 +6,9 @@ using namespace foxintango;
 
 #define MODULE_INTERFACE_STRING "MODULE_INTERFACE_INSTANCE"
 
+const char** MODULE_PATH_DEFAULTS = [
+"lib","/usr/lib","/usr/local/lib"
+];
 namespace foxintango {
 class ModuleIMPL {
 public:
