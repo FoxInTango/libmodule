@@ -2,6 +2,8 @@
 #define _LIB_MODULE_H_
 
 #include "Module.h"
+#include "ModuleInterface.h"
+
 #include <libcpp/libcpp.h>
 
 namespace foxintango {
