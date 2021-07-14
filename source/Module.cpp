@@ -51,7 +51,6 @@ Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
         } else {
             std::cout << "ModuleInterface Load Filed." << std::endl;
         }
-
     } else {
         std::cout << "Module Load Failed." << std::endl;
     }
