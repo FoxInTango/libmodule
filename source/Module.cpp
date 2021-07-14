@@ -43,6 +43,10 @@ ModuleIMPL::~ModuleIMPL(){
 Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
     dlHandle = dlopen(path,RTLD_LAZY);
     if(dlHandle) {
+        /** 错误排查
+         *  ldd -r [path]
+         *  nm -A [path]
+         * */
         std::cout << "Module Loaded." << std::endl;
         interface = (ModuleInterface*)dlsym(dlHandle,MODULE_INTERFACE_STRING);
 
