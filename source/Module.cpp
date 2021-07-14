@@ -2,7 +2,10 @@
 using namespace foxintango;
 #include <string.h>
 #include <dlfcn.h>
+#include <iostream>
+
 #define MODULE_INTERFACE_STRING "MODULE_INTERFACE_INSTANCE"
+
 namespace foxintango {
 class ModuleIMPL {
 public:
