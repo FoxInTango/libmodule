@@ -92,3 +92,9 @@ Module::Module(const char* path) {
 Module::~Module() {
     if(this->impl) delete this->impl;
 }
+
+ModuleInterface* Module::interface() {
+    if(this->impl) return this->impl->interface;
+
+    return 0;
+}

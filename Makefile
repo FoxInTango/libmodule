@@ -125,7 +125,7 @@ ${TARGET_OBJECTS_DIR}/%.o : $(TARGET_SOURCES_DIR)/%.cpp
 	cc ${CFLAGS} ${CXXFLAGS} -c $< -o $@ ${TARGET_LIB_PIC}
 
 module: ./out/main.o
-	cc -o bin/arguments ./out/main.o -lmodule ${TARGET_LIBS}
+	cc -o bin/module ./out/main.o -lmodule ${TARGET_LIBS}
 ./out/main.o:./main/main.cpp
 	cc ${CFLAGS} ${CXXFLAGS} -c ./main/main.cpp -o ./out/main.o
 clean   :
