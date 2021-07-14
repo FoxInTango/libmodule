@@ -40,7 +40,17 @@ ModuleIMPL::~ModuleIMPL(){
 Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
     dlHandle = dlopen(path,RTLD_LAZY);
     if(dlHandle) {
+        std::cout << "Module Loaded." << std::endl;
         interface = (ModuleInterface*)dlsym(dlHandle,MODULE_INTERFACE_STRING);
+
+        if(interface) {
+            std::cout << "ModuleInterface Loaded." << std::endl; 
+        } else {
+            std::cout << "ModuleInterface Load Filed." << std::endl;
+        }
+
+    } else {
+        std::cout << "Module Load Failed." << std::endl;
     }
 }
 
