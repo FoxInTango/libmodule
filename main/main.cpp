@@ -9,7 +9,7 @@ int main(int argc,char** argv) {
     if(interface) {
         std::cout << "Module - IOEngineLWS loaded." << std::endl;
 
-        if(interface->containClass("IOEngineLWS")){
+        if(interface->containClass((unsigned char*)"IOEngineLWS")){
             std::cout << "IOEngineLWS Exists." << std::endl;
         } else {
             std::cout << "IOEngineLWS NOT Exists." << std::endl;
