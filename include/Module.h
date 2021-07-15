@@ -12,6 +12,9 @@ public:
 public:
     typedef enum _MODULE_STATUS
     {
+        MS_INTERFACE_MISSED = -2,
+        MS_LOAD_FAILED = -1,
+        MS_BAD_PATH = 0,
         MS_OK
     } MODULE_STATUS;
 public:
