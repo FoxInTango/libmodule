@@ -2,6 +2,11 @@
 using namespace foxintango;
 #include <iostream>
 
+/** module
+ *      -c module.json [-p path]
+ *      -l pathA pathB pathC
+ * */
+
 int main(int argc,char** argv) {
     Module* module = new Module("/usr/local/lib/IOEngineLWS.so");
 
