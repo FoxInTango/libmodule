@@ -20,7 +20,6 @@ public:
    ~Module();
 public:
    MODULE_STATUS status();
-   MODULE_STATUS load(const char* path);
    ModuleInterface* interface();
 };
 }

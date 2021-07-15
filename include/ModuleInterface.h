@@ -5,7 +5,6 @@
 #include <libcpp/libcpp.h>
 
 namespace foxintango {
-class Model;
 class foxintangoAPI ModuleInterface {
 public:
     ModuleInterface();
