@@ -72,7 +72,23 @@ ModuleIMPL::~ModuleIMPL(){
 Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
     dlHandle = dlopen(path,RTLD_LAZY);
     if(dlHandle) {
-        interface = (ModuleInterface*)dlsym(dlHandle,MODULE_INTERFACE_STRING);
+        /** 错误排查
+         *  ldd -r [path]
+         *  nm -A [path]
+         * */
+        std::cout << "Module Loaded." << std::endl;
+        interface = (ModuleInterface*)dlsym(dlHandle,"MODULE_INTERFACE_INSTANCE");
+
+        if(interface) {
+            std::cout << "ModuleInterface Loaded." << std::endl;
+            return Module::MS_OK;
+        } else {
+            std::cout << "ModuleInterface Load Filed -- ERROR: " << dlerror() << std::endl;
+            return Module::MS_INTERFACE_MISSED;
+        }
+    } else {
+        std::cout << "Module Load Failed -- ERROR: " << dlerror() << std::endl;
+        return Module::MS_LOAD_FAILED;
     }
 }
 
