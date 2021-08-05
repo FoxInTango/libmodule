@@ -69,6 +69,7 @@ Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
         /** 错误排查
          *  ldd -r [path]
          *  nm -A [path]
+         *  NOTE : 模块依赖项需与模块进行链接
          * */
         std::cout << "Module Loaded." << std::endl;
         interface = (ModuleInterface*)dlsym(dlHandle,MODULE_INTERFACE_STRING);
@@ -93,7 +94,7 @@ ModuleIMPL::~ModuleIMPL(){
 }
 #elif defined(__APPLE__) || defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_MAC)
 Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
-    dlHandle = dlopen(path,RTLD_LAZY);
+    dlHandle = dlopen(path,RTLD_LAZY | RTLD_GLOBAL);
     if(dlHandle) {
         /** 错误排查
          *  ldd -r [path]

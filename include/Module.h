@@ -28,6 +28,13 @@
 #include <libcpp/libcpp.h>
 
 namespace foxintango {
+
+struct ModuleInfomation {
+char* version;
+char* description;
+char* author;
+};
+
 class ModuleIMPL;
 class foxintangoAPI Module {
 public:
