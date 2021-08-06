@@ -20,7 +20,7 @@ TARGET_NAME_EXT =
 #    安装位置
 INSTALL_PATH    = /usr/local/libmodule
 
-TARGET_OBJECTS_DIR := ./out
+TARGET_OBJECTS_DIR := ./obj
 TARGET_HEADERS_DIR := ./include
 TARGET_SOURCES_DIR := ./source
 TARGET_BINARY_DIR  := ./bin
@@ -124,10 +124,6 @@ ${TARGET_LIBRARY_DIR}/${TARGET_NAME} : $(TARGET_OBJECTS) $(THIRDS_OBJECTS)
 ${TARGET_OBJECTS_DIR}/%.o : $(TARGET_SOURCES_DIR)/%.cpp
 	cc ${CFLAGS} ${CXXFLAGS} -c $< -o $@ ${TARGET_LIB_PIC}
 
-module: ./out/main.o
-	cc -o bin/module ./out/main.o -lmodule ${TARGET_LIBS}
-./out/main.o:./main/main.cpp
-	cc ${CFLAGS} ${CXXFLAGS} -c ./main/main.cpp -o ./out/main.o
 clean   :
 	rm ${TARGET_OBJECTS_DIR}/*.o
 	rm ${TARGET_LIBRARY_DIR}/*.${TARGET_NAME_EXT}
