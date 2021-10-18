@@ -71,18 +71,19 @@ Module::MODULE_STATUS ModuleIMPL::load(const char* path) {
          *  nm -A [path]
          *  NOTE : 模块依赖项需与模块进行链接
          * */
-        std::cout << "Module Loaded." << std::endl;
+        std::cout << "libModule : " << "module - " << path << " loaded." << std::endl;
+
         interface = (ModuleInterface*)dlsym(dlHandle,MODULE_INTERFACE_STRING);
 
         if(interface) {
-            std::cout << "ModuleInterface Loaded." << std::endl;
+            std::cout << "libModule : module interface loaded." << std::endl;
             return Module::MS_OK;
         } else {
-            std::cout << "ModuleInterface Load Filed -- ERROR: " << dlerror() << std::endl;
+            std::cout << "libModule : module interface load filed -- ERROR: " << dlerror() << std::endl;
             return Module::MS_INTERFACE_MISSED;
         }
     } else {
-        std::cout << "Module Load Failed -- ERROR: " << dlerror() << std::endl;
+        std::cout << "libModule : module load failed -- ERROR: " << dlerror() << std::endl;
         return Module::MS_LOAD_FAILED;
     }
 }
