@@ -1,7 +1,7 @@
-CC=clang
-AS=llvm-as
-AR=llvm-ar
-LD=clang
+CC=gcc
+AS=as
+AR=ar
+LD=ld
 CP=llvm-objcopy
 
 PLATFORM_ARCH         = $(shell uname -s)
@@ -137,8 +137,6 @@ install :
 	cp     $(TARGET_HEADERS) $(INSTALL_PATH_PREFIX)/include/$(TARGET_NAME)
 	cp     $(TARGET_LIB_DIR)/$(TARGET_NAME).$(TARGET_LIB_EXT_STATIC) $(INSTALL_PATH_PREFIX)/lib/
 	cp     $(TARGET_LIB_DIR)/$(TARGET_NAME).$(TARGET_LIB_EXT_DYNAMIC) $(INSTALL_PATH_PREFIX)/lib/
-	cp     $(TARGET_BIN_DIR)/$(TARGET_NAME) $(INSTALL_PATH_PREFIX)/bin
-	$(shell ./pc.sh $(TARGET_NAME) 1.0.0 /usr/local)
 uninstall : 
 	rm -rf $(INSTALL_PATH_PREFIX)/include/$(TARGET_NAME)
 	rm -rf $(INSTALL_PATH_PREFIX)/lib/$(TARGET_NAME).*
