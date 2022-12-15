@@ -21,26 +21,6 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-#ifndef _MODULE_INTERFACE_H_
-#define _MODULE_INTERFACE_H_
+#include "libmodule.h"
+using namespace foxintango;
 
-#include <libmodel/libmodel.h>
-#include <libcpp/libcpp.h>
-
-namespace foxintango {
-class foxintangoAPI ModuleInterface {
-public:
-    ModuleInterface();
-    virtual ~ModuleInterface();
-public:
-    virtual bool  containClass(const char* name) = 0;
-    virtual void* createObject(const char* name) = 0;
-    virtual void* createObject(const char* name,const Model& model) = 0;
-
-    virtual bool  containFunction(const char* name) = 0;
-    virtual void* exportFunction(const char* name) = 0;
-    
-    virtual void* exportVariable(const char* name) = 0;
-};
-}
-#endif

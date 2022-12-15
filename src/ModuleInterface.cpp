@@ -21,6 +21,13 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-#include "../include/libmodule.h"
+#include "ModuleInterface.h"
 using namespace foxintango;
 
+ModuleInterface::ModuleInterface() {
+
+}
+
+ModuleInterface::~ModuleInterface() {
+
+}

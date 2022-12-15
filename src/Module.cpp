@@ -21,7 +21,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-#include "../include/Module.h"
+#include "Module.h"
 using namespace foxintango;
 #include <string.h>
 #include <dlfcn.h>
