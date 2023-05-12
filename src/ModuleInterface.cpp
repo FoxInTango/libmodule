@@ -25,9 +25,7 @@
 using namespace foxintango;
 
 ModuleInterface::ModuleInterface() {
-
 }
 
 ModuleInterface::~ModuleInterface() {
-
 }
