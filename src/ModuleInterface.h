@@ -35,8 +35,9 @@ public:
 public:
     virtual bool  containClass(const char* name) = 0;
     virtual void* createObject(const char* name,const Model& model=Model()) = 0;
-
     virtual bool  containFunction(const char* name) = 0;
+    /** export overrided function with args 
+     */
     virtual void* exportFunction(const char* name) = 0;
     
     virtual bool containVariable(const char* name) = 0;
