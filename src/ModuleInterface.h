@@ -24,7 +24,7 @@
 #ifndef _MODULE_INTERFACE_H_
 #define _MODULE_INTERFACE_H_
 
-#include <libmodel/libmodel.h>
+//#include <libmodel/libmodel.h>
 #include <libcpp/libcpp.h>
 
 namespace foxintango {
@@ -34,7 +34,7 @@ public:
     virtual ~ModuleInterface();
 public:
     virtual bool  containClass(const char* name) = 0;
-    virtual void* createObject(const char* name,const Model& model=Model()) = 0;
+    virtual void* createObject(const char* name) = 0;
     virtual bool  containFunction(const char* name) = 0;
     /** export overrided function with args 
      */
